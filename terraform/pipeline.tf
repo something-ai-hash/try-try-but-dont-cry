@@ -17,6 +17,8 @@ module "codebuild" {
   repo_name            = module.ecr.repo_name_ecr
   codecommit_repo_arn  = module.codecommit.codecommit_repo_arn
   ecr_repo_arn         = module.ecr.ecr_repo_arn
+  ecs_cluster_name     = module.ecs.ecs_cluster_name
+  ecs_service_name     = module.ecs.ecs_service_name
 }
 
 module "cloudwatch-events" {

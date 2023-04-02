@@ -74,4 +74,15 @@ data "aws_iam_policy_document" "codebuild" {
 
   }
 
+  statement {
+    actions = [
+        "ecs:UpdateService"
+    ]
+
+    resources = [
+      "arn:aws:ecs:${var.region}:${var.account_id}:service/${var.ecs_cluster_name}/${var.ecs_service_name}",
+    ]
+
+  }
+
 }

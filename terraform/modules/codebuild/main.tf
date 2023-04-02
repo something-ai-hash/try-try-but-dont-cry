@@ -22,7 +22,9 @@ resource "aws_codebuild_project" "codebuild" {
             - echo Build completed on `date`
             - echo Pushing the Docker image...
             - docker push $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$IMAGE_REPO_NAME:$IMAGE_TAG
-    EOF
+            - sleep 5s
+            - aws ecs update-service --cluster $ECS_CLUSTER --service $ECS_SERVICE --force-new-deployment
+  EOF
   }
 
   environment {
@@ -49,6 +51,16 @@ resource "aws_codebuild_project" "codebuild" {
     environment_variable {
       name  = "IMAGE_TAG"
       value = "latest"
+    }
+
+    environment_variable {
+      name  = "ECS_CLUSTER"
+      value = "${var.ecs_cluster_name}"
+    }
+
+    environment_variable {
+      name  = "ECS_SERVICE"
+      value = "${var.ecs_service_name}"
     }
 
   }
