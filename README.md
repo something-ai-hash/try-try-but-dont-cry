@@ -25,7 +25,7 @@ Modules created to create pipeline are as follows
 ### Infrastructure creation for ecs fargate
 
 ```
-Modules to create pipeline are as follows
+Modules to create infra are as follows
 - networking
 - efs
 - ecr

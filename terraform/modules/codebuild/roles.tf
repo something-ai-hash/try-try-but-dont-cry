@@ -25,59 +25,12 @@ resource "aws_iam_role" "codebuild" {
 }
 
 data "aws_iam_policy_document" "codebuild" {
-  statement {
-    sid = "SSOCodebuildAllow"
-
-    actions = [
-      "s3:*",
-      "kms:*",
-      "ssm:*",
-    ]
-
-    resources = [
-      "*",
-    ]
-  }
 
   statement {
     actions = [
       "logs:CreateLogGroup",
       "logs:CreateLogStream",
       "logs:PutLogEvents",
-    ]
-
-    resources = [
-      "*",
-    ]
-  }
-
-  statement {
-    actions = [
-      "sso:ListInstances",
-      "sso:DescribePermissionSet",
-      "sso:ListTagsForResource",
-      "sso:GetInlinePolicyForPermissionSet",
-      "sso:ListAccountAssignments",
-      "sso:CreateAccountAssignment",
-      "sso:DescribeAccountAssignmentCreationStatus",
-      "sso:DeleteAccountAssignment",
-      "sso:DescribeAccountAssignmentDeletionStatus",
-      "sso:CreatePermissionSet",
-      "sso:PutInlinePolicyToPermissionSet",
-      "sso:ProvisionPermissionSet",
-      "sso:DeleteInlinePolicyFromPermissionSet",
-      "sso:DescribePermissionSetProvisioningStatus",
-      "sso:DeletePermissionSet",
-    ]
-
-    resources = [
-      "*",
-    ]
-  }
-
-  statement {
-    actions = [
-      "identitystore:ListGroups",
     ]
 
     resources = [
