@@ -23,4 +23,14 @@ variable "repo_name" {
   description = "repo name"
 }
 
+variable "codecommit_repo_arn" {
+  type        = string
+  description = "codecommit_repo_arn"
+}
+
+variable "ecr_repo_arn" {
+  type        = string
+  description = "ecr_repo_arn"
+}
+
 

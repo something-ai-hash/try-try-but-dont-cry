@@ -15,6 +15,8 @@ module "codebuild" {
   account_id           = var.account_id
   region               = var.region
   repo_name            = module.ecr.repo_name_ecr
+  codecommit_repo_arn  = module.codecommit.codecommit_repo_arn
+  ecr_repo_arn         = module.ecr.ecr_repo_arn
 }
 
 module "cloudwatch-events" {

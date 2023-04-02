@@ -40,12 +40,21 @@ data "aws_iam_policy_document" "codebuild" {
 
   statement {
     actions = [
-         "ecr:GetAuthorizationToken",
           "ecr:BatchCheckLayerAvailability",
           "ecr:CompleteLayerUpload",
           "ecr:InitiateLayerUpload",
           "ecr:PutImage",
           "ecr:UploadLayerPart",
+    ]
+
+    resources = [
+      "${var.ecr_repo_arn}",
+    ]
+  }
+
+  statement {
+    actions = [
+         "ecr:GetAuthorizationToken",
     ]
 
     resources = [
@@ -55,11 +64,12 @@ data "aws_iam_policy_document" "codebuild" {
 
   statement {
     actions = [
-         "codecommit:*"
+        "codecommit:GetRepository",
+        "codecommit:GitPull",
     ]
 
     resources = [
-      "*",
+      "${var.codecommit_repo_arn}",
     ]
 
   }
