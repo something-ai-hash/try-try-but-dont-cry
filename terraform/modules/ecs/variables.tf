@@ -81,3 +81,8 @@ variable "target_group_arn" {
     description = "arn of target group"
 }
 
+variable "lb_security_group_id" {
+    type = string
+    description = "security group id of loadbalancer"
+}
+

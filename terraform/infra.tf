@@ -62,5 +62,6 @@ module "ecs" {
   access_point_id      = module.efs.access_point_id
   private_subnets_id   = flatten("${module.networking.private_subnets_id}")
   target_group_arn     = module.loadbalancer.target_group_arn
+  lb_security_group_id = module.loadbalancer.lb_security_group_id
 }
 
