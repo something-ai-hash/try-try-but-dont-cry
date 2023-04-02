@@ -20,7 +20,7 @@ Modules created to create pipeline are as follows
 - Clouwatch-Events
 ```
 
-<img src="image-assets/ci-cd-flow.png" alt="Employee data" title="Employee Data title">
+<img src="image-assets/ci-cd-flow.png" alt="CI/CD flow" title="Employee Data title">
 
 ### Infrastructure creation for ecs fargate
 
@@ -34,3 +34,7 @@ Modules to create infra are as follows
 - loadbalancer
 - ecs
 ```
+
+## Architecture Diagram
+
+<img src="image-assets/network-diagram.png" alt="network diagram" title="Employee Data title">
