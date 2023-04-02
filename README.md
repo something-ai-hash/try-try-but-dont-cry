@@ -19,6 +19,7 @@ Modules created to create pipeline are as follows
 - Codebuild
 - Clouwatch-Events
 ```
+## Basic CI/CD flow
 
 <img src="image-assets/ci-cd-flow.png" alt="CI/CD flow" title="Employee Data title">
 
@@ -35,6 +36,6 @@ Modules to create infra are as follows
 - ecs
 ```
 
-## Architecture Diagram
+## Network Diagram
 
 <img src="image-assets/network-diagram.png" alt="network diagram" title="Employee Data title">
