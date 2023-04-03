@@ -94,4 +94,4 @@ Modules to create infra are as follows
 - task execution role
 ```
 
-#### Note : terraform.vars is not added to this repo due to security concerns as it is a public repo.
+#### Note : *.tfvars is not added to this repo due to security concerns as it is a public repo.
